@@ -58,10 +58,23 @@ for i in range(qtdLinhas):
                     "ODD": odd}
         
         listElements.append(tempDict)
-    
+
 for value in listElements:
     print(value)
+
+sureTime = []
+for c in range(len(listElements)):
+    # print(listElements[c]["Casa"])
+    sure =  (1 / listElements[c]["Casa"]) + 1 / (listElements[c]["Empate"]) + 1 / (listElements[c]["Fora"])
+    print(sure)
+    if sure < 1:
+        sureTime.append(listElements[c]["Confronto"])
+
+if len(sureTime) == 0:
+    print("NAO TEM APOSTA SEGURA")
     
+print(sureTime)
+
 list = []
 
 driver.quit()
